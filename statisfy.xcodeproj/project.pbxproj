@@ -121,6 +121,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9724FB427D5763D0089C9EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C9A6EA0C27D52B7900609629 = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +281,7 @@
 		C9A6EAB527D53A2200609629 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C9724FB427D5763D0089C9EE /* Views */,
 				C9A6EAB727D53A5400609629 /* Models */,
 				C9A6EAAE27D538F000609629 /* Managers */,
 				C9A6EAB627D53A3400609629 /* Screens */,

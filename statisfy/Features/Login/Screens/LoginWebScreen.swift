@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// Create SwiftUI component to be at the top of this ViewController
+// Left is close button, right is nothing, middle is "Login" text
+
 struct LoginWebScreen: UIViewControllerRepresentable {
     typealias UIViewControllerType = LoginWebViewController
     

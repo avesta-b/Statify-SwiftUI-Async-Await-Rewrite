@@ -71,6 +71,7 @@ struct ProductionLoginManager: LoginManager {
         return request
     }
     
+    // Write unit test for this
     func extractCode(url: URL) -> Result<String, ExtractCodeError> {
         guard let queryItems = URLComponents(string: url.absoluteString)?
                 .queryItems else {
@@ -122,6 +123,7 @@ struct ProductionLoginManager: LoginManager {
 // Todo: unit test this logic
 extension ProductionLoginManager {
     
+    // Write unit test for this
     func makeHttpBodyFromCode(code: String) throws -> Data {
         let requestBody = RequestAccessTokenModelTemp(code: code)
         let postBody: [String: String] = [
@@ -149,6 +151,7 @@ extension ProductionLoginManager {
         
     }
     
+    // Write unit test for this
     func generateRequest(code: String) throws -> URLRequest {
         guard let url = URL(string: CommonURLs.tokenURL) else { throw NetworkError.failedToMakeURL }
         var request = URLRequest(url: url,
