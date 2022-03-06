@@ -19,7 +19,7 @@ struct WelcomeScreen: View {
             Spacer()
             GetStartedButton(action: { showingSheet.toggle() })
                 .sheet(isPresented: $showingSheet) {
-                    WelcomeScreen()
+                    LoginWebScreen()
                 }
                 .padding(8.0)
             DemoTheAppButton {

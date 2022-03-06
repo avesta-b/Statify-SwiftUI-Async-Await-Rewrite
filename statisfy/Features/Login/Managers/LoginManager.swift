@@ -34,12 +34,18 @@ enum NetworkError: Error {
     }
 }
 
+enum ExtractCodeError: Error {
+    case noItems
+    case accessDenied
+    case noCode
+}
+
 /// Protocol that generates LoginURL, can be swapped out at runtime for unit tests and mocks
 /// Use LoginURLGenerator.generate to retrieve the appropriate loginURLGenerator
 protocol LoginManager {
     var loginRequest: URLRequest { get }
     
-    func extractCode(url: URL) -> String
+    func extractCode(url: URL) -> Result<String, ExtractCodeError>
     
     func tradeCodeForToken(with code: String) async throws -> ResponseAccessTokenModel
 }
@@ -65,29 +71,28 @@ struct ProductionLoginManager: LoginManager {
         return request
     }
     
-    func extractCode(url: URL) -> String {
+    func extractCode(url: URL) -> Result<String, ExtractCodeError> {
         guard let queryItems = URLComponents(string: url.absoluteString)?
                 .queryItems else {
-                    return "NO ITEMS"
+                    return .failure(.noItems)
                 }
         
         // Make sure access was granted
         guard queryItems
                 .contains(where: {$0.value != "access_denied"}) != false else {
                     // Handle access being denied here
-                    return "USER DENIED ACCESS"
+                    return .failure(.accessDenied)
                 }
         
         guard let item = queryItems
                 .first(where: { $0.name == "code"} ),
               let code = item.value else {
                     // Handle no code here
-                    return "NO CODE"
+                  return .failure(.noCode)
                 }
         
-        return code
+        return .success(code)
     }
-    
     
     func tradeCodeForToken(with code: String) async throws -> ResponseAccessTokenModel {
         let request = try generateRequest(code: code)
@@ -99,7 +104,7 @@ struct ProductionLoginManager: LoginManager {
         
         // If the error is not nil, throw the error
         let error = NetworkError.fetchError(from: httpResponse.statusCode)
-        guard error != nil else {
+        guard error == nil else {
             throw error!
         }
         
@@ -121,7 +126,7 @@ extension ProductionLoginManager {
         let requestBody = RequestAccessTokenModelTemp(code: code)
         let postBody: [String: String] = [
             RequestAccessTokenModelTemp.CodingKeys.clientId.rawValue    : requestBody.clientId,
-            RequestAccessTokenModelTemp.CodingKeys.code.rawValue        : requestBody.clientId,
+            RequestAccessTokenModelTemp.CodingKeys.code.rawValue        : code,
             RequestAccessTokenModelTemp.CodingKeys.clientSecret.rawValue: requestBody.clientSecret,
             RequestAccessTokenModelTemp.CodingKeys.redirectURI.rawValue : requestBody.redirectURI,
             RequestAccessTokenModelTemp.CodingKeys.grantType.rawValue   : requestBody.grantType

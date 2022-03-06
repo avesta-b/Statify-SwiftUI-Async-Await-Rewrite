@@ -65,6 +65,33 @@ extension LoginWebViewController: WKNavigationDelegate {
             return
         }
         
-        let code = loginManager.extractCode(url: url)
+        
+        let codeResponse = loginManager.extractCode(url: url)
+        
+        switch codeResponse {
+        case .success(let code):
+            Task {
+                do {
+                    let response = try await loginManager.tradeCodeForToken(with: code)
+                    print(response)
+                } catch is NetworkError {
+                    print("is Network Error")
+                } catch {
+                    print("is another type of error")
+                }
+            }
+            
+        case .failure(let err):
+            switch err {
+            case .noItems:
+                print("no items")
+            case .accessDenied:
+                print("access denied")
+            case .noCode:
+                print("no code")
+            }
+        }
+        
+    
     }
 }

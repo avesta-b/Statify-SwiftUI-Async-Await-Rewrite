@@ -29,6 +29,7 @@
 		C9A6EABB27D53B2100609629 /* ExchangeCodeForTokenModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EABA27D53B2100609629 /* ExchangeCodeForTokenModels.swift */; };
 		C9A6EABD27D53E3300609629 /* CommonURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EABC27D53E3300609629 /* CommonURLs.swift */; };
 		C9A6EAC027D540CD00609629 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EABF27D540CD00609629 /* ContentType.swift */; };
+		C9A6EAC227D5494000609629 /* LoginWebScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EAC127D5494000609629 /* LoginWebScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		C9A6EABA27D53B2100609629 /* ExchangeCodeForTokenModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCodeForTokenModels.swift; sourceTree = "<group>"; };
 		C9A6EABC27D53E3300609629 /* CommonURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonURLs.swift; sourceTree = "<group>"; };
 		C9A6EABF27D540CD00609629 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		C9A6EAC127D5494000609629 /* LoginWebScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A6EAAC27D5384C00609629 /* LoginWebViewController.swift */,
+				C9A6EAC127D5494000609629 /* LoginWebScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				C9A6EAB227D5394D00609629 /* LoginSensitiveInfo.swift in Sources */,
 				C9A6EA9727D52D0E00609629 /* WelcomeScreen.swift in Sources */,
 				C9A6EAC027D540CD00609629 /* ContentType.swift in Sources */,
+				C9A6EAC227D5494000609629 /* LoginWebScreen.swift in Sources */,
 				C9A6EAA627D5314200609629 /* GetStartedButton.swift in Sources */,
 				C9A6EABD27D53E3300609629 /* CommonURLs.swift in Sources */,
 				C9A6EA9D27D52FA900609629 /* Strings.swift in Sources */,
