@@ -11,11 +11,11 @@ import StatifyColors
 @main
 struct StatifyApp: App {
     
-    @AppStorage(OnboardingStatus.userDefaultsKey) var status: OnboardingStatus?
+    @AppStorage(OnboardingStatus.userDefaultsKey) var status: String?
     
     var body: some Scene {
         WindowGroup {
-            RootViewManagerFactory.rootViewManager.rootView
+            RootViewFactory.rootView
                 .background(Color(SColors.backgroundColor))
         }
     }

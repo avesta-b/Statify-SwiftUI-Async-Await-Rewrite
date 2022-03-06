@@ -16,45 +16,32 @@ enum OnboardingStatus: String {
     static let userDefaultsKey = "onboarding_status"
 }
 
-protocol RootViewManagerProtocol {
-    associatedtype T: View
+
+
+/// Generates the appropriate RootViewManager at runtime
+enum RootViewFactory {
     
-    var rootView: T { get }
+    static var rootView: some View {
+        // Input logic to retrieve the appropriate rootViewManager at runtime
+        return RootView()
+    }
 }
 
 
-struct RootViewManager: RootViewManagerProtocol {
+struct RootView: View {
     
-    @ViewBuilder
-    var rootView: some View {
-        
-        switch self.status {
-        case .needsToLogin:
+    @AppStorage(OnboardingStatus.userDefaultsKey) var status: String?
+    
+    var body: some View {
+        let onboarding = OnboardingStatus(rawValue: status ?? "")
+        switch onboarding {
+        case .needsToLogin, .none:
             WelcomeScreen()
         case .loggedIn:
             Text("Hello")
         }
     }
-    
-    private var status: OnboardingStatus {
-        guard let onboardingStatusValue = UserDefaults.standard.string(forKey: OnboardingStatus.userDefaultsKey),
-              let onboardingStatus = OnboardingStatus(rawValue: onboardingStatusValue) else {
-              return .needsToLogin
-              }
-        return onboardingStatus
-    }
 }
-
-
-/// Generates the appropriate RootViewManager at runtime
-enum RootViewManagerFactory {
-    
-    static var rootViewManager: some RootViewManagerProtocol {
-        // Input logic to retrieve the appropriate rootViewManager at runtime
-        return RootViewManager()
-    }
-}
-
 
 
 
