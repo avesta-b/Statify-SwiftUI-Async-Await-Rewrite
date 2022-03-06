@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StatifyColors
 
 @main
 struct StatifyApp: App {
@@ -13,6 +14,7 @@ struct StatifyApp: App {
     var body: some Scene {
         WindowGroup {
             RootViewManagerFactory.rootViewManager.rootView
+                .background(Color(SColors.backgroundColor))
         }
     }
 }
