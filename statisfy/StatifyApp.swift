@@ -18,5 +18,6 @@ struct StatifyApp: App {
             RootViewFactory.rootView
                 .background(Color(SColors.backgroundColor))
         }
+    
     }
 }

@@ -7,11 +7,24 @@
 
 import SwiftUI
 
+// Make a generic LazyVGridView that takes a parameter of a model which will be an instance of a protocol
+// This view will be responsible for top 50 tracks and artists
+
+// Make a generic List View for recent tracks
+
+// Make a generic view for logging out of the application
+
+
+
 struct MainTabBarScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            
+        }
     }
 }
+
+
 
 struct MainTabBarScreen_Previews: PreviewProvider {
     static var previews: some View {

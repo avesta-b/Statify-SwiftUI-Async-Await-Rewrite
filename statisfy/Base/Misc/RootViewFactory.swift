@@ -10,8 +10,9 @@ import StatifyColors
 
 
 enum OnboardingStatus: String {
-    case needsToLogin = "needs_to_login"
-    case loggedIn = "logged_in"
+    case needsToLogin   = "needs_to_login"
+    case loggedIn       = "logged_in"
+    case demoingApp     = "demoing_app"
     
     static let userDefaultsKey = "onboarding_status"
 }
@@ -37,8 +38,9 @@ struct RootView: View {
         switch onboarding {
         case .needsToLogin, .none:
             WelcomeScreen()
-        case .loggedIn:
+        case .loggedIn, .demoingApp:
             Text("Hello")
+//                .onAppear(perform: purgeUserDefaults)
         }
     }
 }
