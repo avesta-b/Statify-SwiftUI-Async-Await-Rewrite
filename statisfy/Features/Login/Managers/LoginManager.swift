@@ -41,11 +41,7 @@ protocol LoginManager {
     
     func extractCode(url: URL) -> String
     
-    func makeHttpBodyFromCode(code: String) throws -> Data
-    
-    func generateRequest(code: String) throws -> URLRequest
-    
-    func tradeCodeForToken(using request: URLRequest) async throws -> ResponseAccessTokenModel
+    func tradeCodeForToken(with code: String) async throws -> ResponseAccessTokenModel
 }
 
 struct ProductionLoginManager: LoginManager {
@@ -92,6 +88,35 @@ struct ProductionLoginManager: LoginManager {
         return code
     }
     
+    
+    func tradeCodeForToken(with code: String) async throws -> ResponseAccessTokenModel {
+        let request = try generateRequest(code: code)
+        let (responseData, response) = try await session.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkError.invalidResponse
+        }
+        
+        // If the error is not nil, throw the error
+        let error = NetworkError.fetchError(from: httpResponse.statusCode)
+        guard error != nil else {
+            throw error!
+        }
+        
+        do {
+            let responseModel = try decoder.decode(ResponseAccessTokenModel.self, from: responseData)
+            return responseModel
+        } catch {
+            throw NetworkError.decodingFailed
+        }
+        
+    }
+    
+}
+
+// Todo: unit test this logic
+extension ProductionLoginManager {
+    
     func makeHttpBodyFromCode(code: String) throws -> Data {
         let requestBody = RequestAccessTokenModelTemp(code: code)
         let postBody: [String: String] = [
@@ -130,27 +155,4 @@ struct ProductionLoginManager: LoginManager {
         request.httpBody = try makeHttpBodyFromCode(code: code)
         return request
     }
-    
-    func tradeCodeForToken(using request: URLRequest) async throws -> ResponseAccessTokenModel {
-        let (responseData, response) = try await session.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw NetworkError.invalidResponse
-        }
-        
-        // If the error is not nil, throw the error
-        let error = NetworkError.fetchError(from: httpResponse.statusCode)
-        guard error != nil else {
-            throw error!
-        }
-        
-        do {
-            let responseModel = try decoder.decode(ResponseAccessTokenModel.self, from: responseData)
-            return responseModel
-        } catch {
-            throw NetworkError.decodingFailed
-        }
-        
-    }
-    
 }
