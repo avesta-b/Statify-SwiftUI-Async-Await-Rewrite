@@ -23,6 +23,7 @@
 		C9A6EAA827D5347E00609629 /* DemoTheAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EAA727D5347E00609629 /* DemoTheAppButton.swift */; };
 		C9A6EAAD27D5384C00609629 /* LoginWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EAAC27D5384C00609629 /* LoginWebViewController.swift */; };
 		C9A6EAB027D538FD00609629 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EAAF27D538FD00609629 /* LoginManager.swift */; };
+		C9A6EAB227D5394D00609629 /* LoginSensitiveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EAB127D5394D00609629 /* LoginSensitiveInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		C9A6EAA727D5347E00609629 /* DemoTheAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTheAppButton.swift; sourceTree = "<group>"; };
 		C9A6EAAC27D5384C00609629 /* LoginWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebViewController.swift; sourceTree = "<group>"; };
 		C9A6EAAF27D538FD00609629 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		C9A6EAB127D5394D00609629 /* LoginSensitiveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSensitiveInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A6EA9C27D52FA900609629 /* Strings.swift */,
+				C9A6EAB127D5394D00609629 /* LoginSensitiveInfo.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			files = (
 				C9A6EA9427D52CF200609629 /* RootViewFactory.swift in Sources */,
 				C9A6EAA827D5347E00609629 /* DemoTheAppButton.swift in Sources */,
+				C9A6EAB227D5394D00609629 /* LoginSensitiveInfo.swift in Sources */,
 				C9A6EA9727D52D0E00609629 /* WelcomeScreen.swift in Sources */,
 				C9A6EAA627D5314200609629 /* GetStartedButton.swift in Sources */,
 				C9A6EA9D27D52FA900609629 /* Strings.swift in Sources */,
