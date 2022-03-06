@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StatifyColors
 
 
 enum OnboardingStatus: String {
@@ -17,29 +18,30 @@ enum OnboardingStatus: String {
 
 protocol RootViewManagerProtocol {
     associatedtype T: View
+    
     var rootView: T { get }
 }
 
 
 struct RootViewManager: RootViewManagerProtocol {
     
+    @ViewBuilder
     var rootView: some View {
         
-        // If there is no value, return the fallback view
-        guard let onboardingStatusValue = UserDefaults.standard.value(forKey: OnboardingStatus.userDefaultsKey),
-              let onboardingStatusValue = onboardingStatusValue as? String,
-              let onboardingStatus = OnboardingStatus(rawValue: onboardingStatusValue) else {
-            return WelcomeScreen()
-        }
-        
-        switch onboardingStatus {
+        switch self.status {
         case .needsToLogin:
-            // Show OnboardingView
-            return WelcomeScreen()
+            WelcomeScreen()
         case .loggedIn:
-            // Show View with status
-            return WelcomeScreen()
+            Text("Hello")
         }
+    }
+    
+    private var status: OnboardingStatus {
+        guard let onboardingStatusValue = UserDefaults.standard.string(forKey: OnboardingStatus.userDefaultsKey),
+              let onboardingStatus = OnboardingStatus(rawValue: onboardingStatusValue) else {
+              return .needsToLogin
+              }
+        return onboardingStatus
     }
 }
 

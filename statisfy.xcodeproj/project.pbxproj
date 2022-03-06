@@ -30,6 +30,7 @@
 		C9A6EABD27D53E3300609629 /* CommonURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EABC27D53E3300609629 /* CommonURLs.swift */; };
 		C9A6EAC027D540CD00609629 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EABF27D540CD00609629 /* ContentType.swift */; };
 		C9A6EAC227D5494000609629 /* LoginWebScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EAC127D5494000609629 /* LoginWebScreen.swift */; };
+		C9A6EAC627D54F7600609629 /* MainTabBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EAC527D54F7600609629 /* MainTabBarScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		C9A6EABC27D53E3300609629 /* CommonURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonURLs.swift; sourceTree = "<group>"; };
 		C9A6EABF27D540CD00609629 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		C9A6EAC127D5494000609629 /* LoginWebScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebScreen.swift; sourceTree = "<group>"; };
+		C9A6EAC527D54F7600609629 /* MainTabBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		C9A6EA8E27D52C6C00609629 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C9A6EAC327D54F4000609629 /* TopTabBar */,
 				C9A6EAB527D53A2200609629 /* Login */,
 				C9A6EA9527D52CFB00609629 /* Welcome */,
 			);
@@ -290,6 +293,22 @@
 				C9A6EABA27D53B2100609629 /* ExchangeCodeForTokenModels.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C9A6EAC327D54F4000609629 /* TopTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C9A6EAC427D54F6400609629 /* Screens */,
+			);
+			path = TopTabBar;
+			sourceTree = "<group>";
+		};
+		C9A6EAC427D54F6400609629 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C9A6EAC527D54F7600609629 /* MainTabBarScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +456,7 @@
 				C9A6EAB027D538FD00609629 /* LoginManager.swift in Sources */,
 				C9A6EAAD27D5384C00609629 /* LoginWebViewController.swift in Sources */,
 				C9A6EAB427D539ED00609629 /* URLExtensions.swift in Sources */,
+				C9A6EAC627D54F7600609629 /* MainTabBarScreen.swift in Sources */,
 				C9A6EA1927D52B7900609629 /* StatifyApp.swift in Sources */,
 				C9A6EAA427D530F500609629 /* GreetingTextView.swift in Sources */,
 			);

@@ -11,6 +11,8 @@ import StatifyColors
 @main
 struct StatifyApp: App {
     
+    @AppStorage(OnboardingStatus.userDefaultsKey) var status: OnboardingStatus?
+    
     var body: some Scene {
         WindowGroup {
             RootViewManagerFactory.rootViewManager.rootView

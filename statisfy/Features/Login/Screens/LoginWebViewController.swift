@@ -73,7 +73,7 @@ extension LoginWebViewController: WKNavigationDelegate {
             Task {
                 do {
                     let response = try await loginManager.tradeCodeForToken(with: code)
-                    print(response)
+                    UserDefaults.standard.set(OnboardingStatus.loggedIn.rawValue, forKey: OnboardingStatus.userDefaultsKey)
                 } catch is NetworkError {
                     print("is Network Error")
                 } catch {
