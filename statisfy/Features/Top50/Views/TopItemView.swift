@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StatifyColors
 
 struct TopItemView: View {
     
@@ -23,7 +24,7 @@ struct TopItemView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .background(Color.red)
+        .background(BackgroundImageView(imageURL: viewModel.imageURL))
     }
 }
 
