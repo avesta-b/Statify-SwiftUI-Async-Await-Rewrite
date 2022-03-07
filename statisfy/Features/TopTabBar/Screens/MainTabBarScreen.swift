@@ -19,7 +19,7 @@ import SwiftUI
 struct MainTabBarScreen: View {
     var body: some View {
         TabView {
-            
+            Text("x")
         }
     }
 }
