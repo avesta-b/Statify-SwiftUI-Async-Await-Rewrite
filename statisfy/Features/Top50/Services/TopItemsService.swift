@@ -9,6 +9,23 @@ import Foundation
 
 class TopItemsService: ObservableObject {
     
+    enum ViewState {
+        case loading
+        case loaded
+        case error
+    }
+    
     @Published var topItems: [TopItemViewModel] = []
     
+    @Published private(set) var state: ViewState = .loading
+    
+    let topItemType: TopItemType
+    
+    init(topItemType: TopItemType) {
+        self.topItemType = topItemType
+    }
+    
+    func fetch() {
+        
+    }
 }

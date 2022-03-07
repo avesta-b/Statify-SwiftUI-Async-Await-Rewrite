@@ -35,7 +35,7 @@ class SizeManager: ObservableObject {
 
 struct TopItemsVGridView: View {
     
-    @StateObject var model = TopItemsService()
+    @StateObject var service: TopItemsService
     
     @StateObject var sizeManager: SizeManager = SizeManager()
     
@@ -43,13 +43,13 @@ struct TopItemsVGridView: View {
         GeometryReader { geometry in
             ScrollView {
                 LazyVGrid(columns: sizeManager.columns) {
-                    ForEach(model.topItems) { item in
+                    ForEach(service.topItems) { item in
                         TopItemView(viewModel: item)
                             .cornerRadius(8.0)
                             .frame(height: sizeManager.width(geometry: geometry))
                             .padding(8)
                             
-                    
+
                     }
                 }
                 
@@ -60,6 +60,7 @@ struct TopItemsVGridView: View {
 
 struct TopItemsVGridView_Previews: PreviewProvider {
     static var previews: some View {
-        TopItemsVGridView()
+        TopItemsVGridView(service: TopItemsService(topItemType: .artists))
+        TopItemsVGridView(service: TopItemsService(topItemType: .tracks))
     }
 }

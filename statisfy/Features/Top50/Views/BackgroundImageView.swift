@@ -10,15 +10,15 @@ import StatifyColors
 
 struct BackgroundImageView: View {
     
-    let imageURL: String
+    let imageURL: String?
     
     var body: some View {
-        AsyncImage(url: URL(string: imageURL)) { image in
+        AsyncImage(url: URL(string: imageURL ?? "")) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         } placeholder: {
-            Color(SColors.spotifyGray)
+            Color(UIColor.systemGray)
         }
 
     }

@@ -14,14 +14,22 @@ struct TopItemView: View {
     
     var body: some View {
         VStack {
-            Text("# \(viewModel.rank)")
-                .padding(12.0)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            HStack {
+            Text("#\(viewModel.rank)")
+                .padding(16)
+                .font(Font.body.bold())
+                .shadow(radius: 5)
+            Spacer()
+            }
                 
             Spacer()
+            HStack {
             Text(viewModel.text)
-                .padding(12.0)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(16)
+                .font(Font.body.bold())
+                .shadow(radius: 5)
+            Spacer()
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .background(BackgroundImageView(imageURL: viewModel.imageURL))
@@ -31,6 +39,7 @@ struct TopItemView: View {
 struct TopItemView_Previews: PreviewProvider {
     static var previews: some View {
         TopItemView(viewModel: TopItemViewModel(text: "Hello There",
-                                                rank: 1))
+                                                rank: 1,
+                                                imageURL: ""))
     }
 }

@@ -11,6 +11,6 @@ struct TopItemViewModel: Identifiable {
     
     let text: String
     let rank: Int
-    let imageURL: String = "https://i.scdn.co/image/ab6761610000e5ebfbc3faec4a370d8393bee7f1"
+    let imageURL: String?
     let id = UUID()
 }
