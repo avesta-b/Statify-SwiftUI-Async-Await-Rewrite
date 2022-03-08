@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C94B7E3827D6E439005BF50B /* SizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B7E3727D6E439005BF50B /* SizeManager.swift */; };
 		C94B7E3A27D70CEF005BF50B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B7E3927D70CEF005BF50B /* Extensions.swift */; };
+		C94B7E3C27D7117D005BF50B /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B7E3B27D7117D005BF50B /* AsyncImageView.swift */; };
+		C94B7E4127D7140C005BF50B /* EnvironmentCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B7E4027D7140C005BF50B /* EnvironmentCache.swift */; };
+		C94B7E4327D71448005BF50B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B7E4227D71448005BF50B /* ImageLoader.swift */; };
 		C951F90827D5968800B62CA3 /* Top50Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951F90727D5968800B62CA3 /* Top50Screen.swift */; };
 		C951F90B27D5971B00B62CA3 /* TopItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951F90A27D5971B00B62CA3 /* TopItemView.swift */; };
 		C951F90D27D5B7E800B62CA3 /* TopItemsVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951F90C27D5B7E800B62CA3 /* TopItemsVGridView.swift */; };
@@ -77,6 +80,9 @@
 /* Begin PBXFileReference section */
 		C94B7E3727D6E439005BF50B /* SizeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeManager.swift; sourceTree = "<group>"; };
 		C94B7E3927D70CEF005BF50B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C94B7E3B27D7117D005BF50B /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		C94B7E4027D7140C005BF50B /* EnvironmentCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentCache.swift; sourceTree = "<group>"; };
+		C94B7E4227D71448005BF50B /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		C951F90727D5968800B62CA3 /* Top50Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top50Screen.swift; sourceTree = "<group>"; };
 		C951F90A27D5971B00B62CA3 /* TopItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopItemView.swift; sourceTree = "<group>"; };
 		C951F90C27D5B7E800B62CA3 /* TopItemsVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopItemsVGridView.swift; sourceTree = "<group>"; };
@@ -139,6 +145,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C94B7E3F27D713F4005BF50B /* CustomAsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C94B7E3B27D7117D005BF50B /* AsyncImageView.swift */,
+				C94B7E4027D7140C005BF50B /* EnvironmentCache.swift */,
+				C94B7E4227D71448005BF50B /* ImageLoader.swift */,
+			);
+			path = CustomAsyncImageView;
+			sourceTree = "<group>";
+		};
 		C951F90327D5960900B62CA3 /* Top50 */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +289,7 @@
 		C9A6EA8F27D52CAF00609629 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C94B7E3F27D713F4005BF50B /* CustomAsyncImageView */,
 				C9A6EA9227D52CCB00609629 /* Misc */,
 				C9A6EA9127D52CC400609629 /* Constants */,
 				C9A6EA9027D52CBB00609629 /* Views */,
@@ -530,6 +547,8 @@
 			files = (
 				C9A6EAB927D53A9900609629 /* LoginManagerFactory.swift in Sources */,
 				C94B7E3A27D70CEF005BF50B /* Extensions.swift in Sources */,
+				C94B7E4327D71448005BF50B /* ImageLoader.swift in Sources */,
+				C94B7E3C27D7117D005BF50B /* AsyncImageView.swift in Sources */,
 				C9A6EA9427D52CF200609629 /* RootViewFactory.swift in Sources */,
 				C9A6EAA827D5347E00609629 /* DemoTheAppButton.swift in Sources */,
 				C9A6EAB227D5394D00609629 /* LoginSensitiveInfo.swift in Sources */,
@@ -554,6 +573,7 @@
 				C9A6EAB427D539ED00609629 /* URLExtensions.swift in Sources */,
 				C9A6EAC627D54F7600609629 /* MainTabBarScreen.swift in Sources */,
 				C9A6EA1927D52B7900609629 /* StatifyApp.swift in Sources */,
+				C94B7E4127D7140C005BF50B /* EnvironmentCache.swift in Sources */,
 				C9A6EAA427D530F500609629 /* GreetingTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

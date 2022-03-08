@@ -99,7 +99,7 @@ extension TopItemsService {
         
         let headers: [String: Any?] = [
             ContentType.rawValue    : ContentType.jsonApplication,
-            "Authorization"         : "Bearer BQBT4DcfecTrlZ1gnSCstcFw_s4l0wg4r4plZji3g4-BuzmJnJDr2F0iZ4tIDZR896FMh3HX3m4nhgCrRNo1jC4iGHwsC1y3tRa5Vn7pjhxDfeHRv61no6-Utk5eC8UeL1-Lu4brsJIBpn_Xz2fdQHfLpeEdMny2xCba1aY9jy-ebbDytbxzoEGtgGNXTA"
+            "Authorization"         : UserDefaultsConstants.Values.bearerAccessToken
         ]
         
         let request = URLRequest(url: apiURL,
