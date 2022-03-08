@@ -30,9 +30,21 @@ struct RootView: View {
             WelcomeScreen()
         case .loggedIn, .demoingApp:
             MainTabBarScreen()
+                .onAppear {
+                    purgeUserDefaults()
+                }
         }
     }
+    
+    private func purgeUserDefaults() {
+        guard UserDefaultsConstants.Values.shouldUpdateAccessToken == true else { return }
+        guard let domain = Bundle.main.bundleIdentifier else { return }
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+    }
 }
+
+// MARK: - For now, we shall purge all defaults if expiryDate passed
 
 
 

@@ -13,13 +13,22 @@ struct BackgroundImageView: View {
     let imageURL: String?
     
     var body: some View {
+//        AsyncImage(url: URL(string: imageURL ?? "")) { image in
+//            image
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//        } placeholder: {
+//            Color(UIColor.systemGray)
+//
+//        }
+    
         if let unwrappedUrl = imageURL,
            let urlObj = URL(string: unwrappedUrl) {
             AsyncImageView(url: urlObj) {
                 Color(UIColor.systemGray)
             }
         } else {
-            Text("Loading")
+            Text("Failed To Load Image")
         }
 
     }

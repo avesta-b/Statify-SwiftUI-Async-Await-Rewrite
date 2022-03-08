@@ -114,13 +114,3 @@ extension LoginWebViewController: WKNavigationDelegate {
 }
 
 
-func purgeUserDefaults() {
-//    UserDefaults.standard.removeObject(forKey: OnboardingStatus.loggedIn.rawValue)
-//
-//    UserDefaults.standard.removeObject(forKey: TokenConstants.accessTokenKey)
-//    UserDefaults.standard.removeObject(forKey: TokenConstants.refreshTokenKey)
-//    UserDefaults.standard.removeObject(forKey: TokenConstants.expiryDateKey)
-    guard let domain = Bundle.main.bundleIdentifier else { return }
-    UserDefaults.standard.removePersistentDomain(forName: domain)
-    UserDefaults.standard.synchronize()
-}

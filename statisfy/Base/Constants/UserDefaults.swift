@@ -27,6 +27,22 @@ enum UserDefaultsConstants {
             let value = UserDefaults.standard.value(forKey: Keys.accessTokenKey) as? String ?? ""
             return "Bearer " + value
         }
+        
+        static var accessTokenExpiryDate: Int {
+            let value = UserDefaults.standard.value(forKey: Keys.expiryDateKey) as? Int ?? 0
+            return value
+        }
+        
+        static var shouldUpdateAccessToken: Bool {
+            let expiryDate = Values.accessTokenExpiryDate
+            let current = Date().timeIntervalSince1970
+            return Int(current) > expiryDate
+        }
+        
+        static var refreshToken: String {
+            let value = UserDefaults.standard.value(forKey: Keys.refreshTokenKey) as? String ?? ""
+            return value
+        }
     }
     
 }

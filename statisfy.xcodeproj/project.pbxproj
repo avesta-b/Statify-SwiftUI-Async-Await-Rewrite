@@ -44,6 +44,7 @@
 		C9A6EAC027D540CD00609629 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EABF27D540CD00609629 /* ContentType.swift */; };
 		C9A6EAC227D5494000609629 /* LoginWebScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EAC127D5494000609629 /* LoginWebScreen.swift */; };
 		C9A6EAC627D54F7600609629 /* MainTabBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6EAC527D54F7600609629 /* MainTabBarScreen.swift */; };
+		C9B4894A27D7EC380050DC39 /* RefreshAccessTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4894927D7EC380050DC39 /* RefreshAccessTokenService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		C9A6EABF27D540CD00609629 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		C9A6EAC127D5494000609629 /* LoginWebScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebScreen.swift; sourceTree = "<group>"; };
 		C9A6EAC527D54F7600609629 /* MainTabBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarScreen.swift; sourceTree = "<group>"; };
+		C9B4894927D7EC380050DC39 /* RefreshAccessTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshAccessTokenService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 		C9A6EA8F27D52CAF00609629 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C9B4894827D7EC240050DC39 /* Services */,
 				C94B7E3F27D713F4005BF50B /* CustomAsyncImageView */,
 				C9A6EA9227D52CCB00609629 /* Misc */,
 				C9A6EA9127D52CC400609629 /* Constants */,
@@ -412,6 +415,14 @@
 				C9A6EAC527D54F7600609629 /* MainTabBarScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		C9B4894827D7EC240050DC39 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9B4894927D7EC380050DC39 /* RefreshAccessTokenService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +558,7 @@
 			files = (
 				C9A6EAB927D53A9900609629 /* LoginManagerFactory.swift in Sources */,
 				C94B7E3A27D70CEF005BF50B /* Extensions.swift in Sources */,
+				C9B4894A27D7EC380050DC39 /* RefreshAccessTokenService.swift in Sources */,
 				C94B7E4327D71448005BF50B /* ImageLoader.swift in Sources */,
 				C94B7E3C27D7117D005BF50B /* AsyncImageView.swift in Sources */,
 				C9A6EA9427D52CF200609629 /* RootViewFactory.swift in Sources */,
