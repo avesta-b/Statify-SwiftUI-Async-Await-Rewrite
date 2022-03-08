@@ -29,8 +29,7 @@ struct RootView: View {
         case .needsToLogin, .none:
             WelcomeScreen()
         case .loggedIn, .demoingApp:
-            Text("Hello")
-//                .onAppear(perform: purgeUserDefaults)
+            MainTabBarScreen()
         }
     }
 }

@@ -22,4 +22,11 @@ enum UserDefaultsConstants {
         case demoingApp     = "demoing_app"
     }
     
+    enum Values {
+        static var bearerAccessToken: String {
+            let value = UserDefaults.standard.value(forKey: Keys.accessTokenKey) as? String ?? ""
+            return "Bearer " + value
+        }
+    }
+    
 }

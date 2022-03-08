@@ -52,3 +52,18 @@ extension URL {
         return components?.url
     }
 }
+
+
+// Mark: - Loosely couples code and can now be mocked very easily
+protocol URLSessionDataFetcher {
+    
+    func fetchData(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse)
+}
+
+extension URLSession: URLSessionDataFetcher {
+    
+    func fetchData(for request: URLRequest, delegate: URLSessionTaskDelegate? = nil) async throws -> (Data, URLResponse) {
+        return try await self.data(for: request, delegate: delegate)
+    }
+    
+}

@@ -11,13 +11,23 @@ import Foundation
 
 // This enum determines which state we are in
 // The Model translates to the same ViewModel, therefore, we need to create a protocol that returns the ViewModel from the model
-enum TopItemType {
+enum TopItemType: String {
     case artists
     case tracks
 }
 
+/// Represents the Top Tracks & Artists data's time range
+enum TopItemTimeRange: String {
+    /// 4 Weeks
+    case shortTerm  = "short_term"
+    /// 6 Months
+    case mediumTerm = "medium_term"
+    /// All Time
+    case longTerm   = "long_term"
+}
+
 // Now we make each Model conform to this protocol
-protocol TopItemsModel {
+protocol TopItemsModel: Decodable {
     var topItemsViewModel: [TopItemViewModel] { get }
 }
 
@@ -173,7 +183,7 @@ struct ExternalIDS: Codable {
 extension TopArtistsModel: TopItemsModel {
     
     var topItemsViewModel: [TopItemViewModel] {
-        var i = 0
+        var i = 1
         var res: [TopItemViewModel] = []
         self.items?.forEach({ artistItem in
             let imageURL = artistItem.images?.last(where: { image in
@@ -194,7 +204,7 @@ extension TopArtistsModel: TopItemsModel {
 extension TopTracksModel: TopItemsModel {
     
     var topItemsViewModel: [TopItemViewModel] {
-        var i = 0
+        var i = 1
         var res: [TopItemViewModel] = []
         self.items?.forEach({ trackItem in
             let imageURL = trackItem.album?.images?.last(where: { image in

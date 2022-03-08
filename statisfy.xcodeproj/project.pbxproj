@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94B7E3827D6E439005BF50B /* SizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B7E3727D6E439005BF50B /* SizeManager.swift */; };
+		C94B7E3A27D70CEF005BF50B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B7E3927D70CEF005BF50B /* Extensions.swift */; };
 		C951F90827D5968800B62CA3 /* Top50Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951F90727D5968800B62CA3 /* Top50Screen.swift */; };
 		C951F90B27D5971B00B62CA3 /* TopItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951F90A27D5971B00B62CA3 /* TopItemView.swift */; };
 		C951F90D27D5B7E800B62CA3 /* TopItemsVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951F90C27D5B7E800B62CA3 /* TopItemsVGridView.swift */; };
@@ -73,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C94B7E3727D6E439005BF50B /* SizeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeManager.swift; sourceTree = "<group>"; };
+		C94B7E3927D70CEF005BF50B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C951F90727D5968800B62CA3 /* Top50Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top50Screen.swift; sourceTree = "<group>"; };
 		C951F90A27D5971B00B62CA3 /* TopItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopItemView.swift; sourceTree = "<group>"; };
 		C951F90C27D5B7E800B62CA3 /* TopItemsVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopItemsVGridView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				C99424C927D690BE00D7254C /* TopItemViewModel.swift */,
+				C94B7E3727D6E439005BF50B /* SizeManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			children = (
 				C9A6EA9327D52CF200609629 /* RootViewFactory.swift */,
 				C9A6EAB327D539ED00609629 /* URLExtensions.swift */,
+				C94B7E3927D70CEF005BF50B /* Extensions.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9A6EAB927D53A9900609629 /* LoginManagerFactory.swift in Sources */,
+				C94B7E3A27D70CEF005BF50B /* Extensions.swift in Sources */,
 				C9A6EA9427D52CF200609629 /* RootViewFactory.swift in Sources */,
 				C9A6EAA827D5347E00609629 /* DemoTheAppButton.swift in Sources */,
 				C9A6EAB227D5394D00609629 /* LoginSensitiveInfo.swift in Sources */,
@@ -536,6 +543,7 @@
 				C99424CC27D6959100D7254C /* TopItemsModel.swift in Sources */,
 				C99424C427D68E7300D7254C /* BackgroundImageView.swift in Sources */,
 				C9A6EABD27D53E3300609629 /* CommonURLs.swift in Sources */,
+				C94B7E3827D6E439005BF50B /* SizeManager.swift in Sources */,
 				C9A6EA9D27D52FA900609629 /* Strings.swift in Sources */,
 				C9A6EABB27D53B2100609629 /* ExchangeCodeForTokenModels.swift in Sources */,
 				C99424C827D6905400D7254C /* TopItemsService.swift in Sources */,

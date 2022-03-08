@@ -23,7 +23,7 @@ struct WelcomeScreen: View {
                 }
                 .padding(8.0)
             DemoTheAppButton {
-                print("Demo started")
+                debugPrint("Demo started")
             }
             .padding(EdgeInsets(top: 8, leading: 16, bottom: 16, trailing: 16))
         }
