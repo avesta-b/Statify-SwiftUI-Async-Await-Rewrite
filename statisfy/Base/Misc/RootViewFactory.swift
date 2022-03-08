@@ -32,7 +32,7 @@ struct RootView: View {
         case .loggedIn, .demoingApp:
             MainTabBarScreen()
                 .task {
-                    if UserDefaultsConstants.Values.shouldUpdateAccessToken {
+                    if onboarding == .loggedIn && UserDefaultsConstants.Values.shouldUpdateAccessToken {
                         let service = RefreshAccessTokenService()
                         await service.refreshAccessToken()
                     }

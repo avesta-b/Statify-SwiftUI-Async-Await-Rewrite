@@ -22,7 +22,7 @@ struct MainTabBarScreen: View {
         TabView {
             TopItemsVGridView(service: TopItemsService(topItemType: .tracks, timeRange: .shortTerm))
                 .tabItem {
-                    Label("Tracks", systemImage: "music.note.house.fill")
+                    Label("Tracks", systemImage: "music.note.house")
                 }
             TopItemsVGridView(service: TopItemsService(topItemType: .tracks, timeRange: .mediumTerm))
                 .tabItem {
@@ -45,6 +45,7 @@ struct MainTabBarScreen: View {
                     Label("Tracks", systemImage: "person.3")
                 }
         }
+        .accentColor(Color(SColors.spotifyGreen))
         .onAppear {
             onTabBarAppear()
         }
