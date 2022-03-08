@@ -22,7 +22,7 @@ struct MainTabBarScreen: View {
         TabView {
             TopItemsVGridView(service: TopItemsService(topItemType: .tracks, timeRange: .shortTerm))
                 .tabItem {
-                    Label("Tracks", systemImage: "music.note.house")
+                    Label("Tracks", systemImage: "music.note.house.fill")
                 }
             TopItemsVGridView(service: TopItemsService(topItemType: .tracks, timeRange: .mediumTerm))
                 .tabItem {

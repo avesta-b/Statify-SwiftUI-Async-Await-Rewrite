@@ -84,11 +84,13 @@ extension LoginWebViewController: WKNavigationDelegate {
                     UserDefaults.standard.set(response.accessToken,
                                               forKey: UserDefaultsConstants.Keys.accessTokenKey)
                     
+                    UserDefaults.standard.set(response.expiresIn + Int(Date().timeIntervalSince1970),
+                                              forKey: UserDefaultsConstants.Keys.expiryDateKey)
+                    
                     UserDefaults.standard.set(response.refreshToken,
                                               forKey: UserDefaultsConstants.Keys.refreshTokenKey)
                     
-                    UserDefaults.standard.set(response.expiresIn + Int(Date().timeIntervalSince1970),
-                                              forKey: UserDefaultsConstants.Keys.expiryDateKey)
+                    
                     self.dismiss(animated: true)
                     
                 } catch is NetworkError {

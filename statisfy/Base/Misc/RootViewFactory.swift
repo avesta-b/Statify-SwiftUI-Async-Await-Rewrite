@@ -22,6 +22,7 @@ enum RootViewFactory {
 struct RootView: View {
     
     @AppStorage(UserDefaultsConstants.Keys.onboardingStatus) var status: String?
+    @AppStorage(UserDefaultsConstants.Keys.accessTokenKey) var accessToken: String?
     
     var body: some View {
         let onboarding = UserDefaultsConstants.OnboardingStatusValues(rawValue: status ?? "")
@@ -30,18 +31,21 @@ struct RootView: View {
             WelcomeScreen()
         case .loggedIn, .demoingApp:
             MainTabBarScreen()
-                .onAppear {
-                    purgeUserDefaults()
+                .task {
+                    if UserDefaultsConstants.Values.shouldUpdateAccessToken {
+                        let service = RefreshAccessTokenService()
+                        await service.refreshAccessToken()
+                    }
                 }
         }
     }
     
-    private func purgeUserDefaults() {
-        guard UserDefaultsConstants.Values.shouldUpdateAccessToken == true else { return }
-        guard let domain = Bundle.main.bundleIdentifier else { return }
-        UserDefaults.standard.removePersistentDomain(forName: domain)
-        UserDefaults.standard.synchronize()
-    }
+//    private func purgeUserDefaults() {
+//        guard UserDefaultsConstants.Values.shouldUpdateAccessToken == true else { return }
+//        guard let domain = Bundle.main.bundleIdentifier else { return }
+//        UserDefaults.standard.removePersistentDomain(forName: domain)
+//        UserDefaults.standard.synchronize()
+//    }
 }
 
 // MARK: - For now, we shall purge all defaults if expiryDate passed
