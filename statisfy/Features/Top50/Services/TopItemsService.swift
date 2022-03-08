@@ -25,7 +25,9 @@ class TopItemsService: ObservableObject {
         self.topItemType = topItemType
     }
     
+    
+    // TO DO: leverage URLExtensions to make the appropriate HTTP requests, put each case into it's own HTTP request too
     func fetch() {
-        
+        let request = URL
     }
 }

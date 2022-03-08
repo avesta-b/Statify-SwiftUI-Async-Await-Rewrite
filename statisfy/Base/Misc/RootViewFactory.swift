@@ -9,16 +9,6 @@ import SwiftUI
 import StatifyColors
 
 
-enum OnboardingStatus: String {
-    case needsToLogin   = "needs_to_login"
-    case loggedIn       = "logged_in"
-    case demoingApp     = "demoing_app"
-    
-    static let userDefaultsKey = "onboarding_status"
-}
-
-
-
 /// Generates the appropriate RootViewManager at runtime
 enum RootViewFactory {
     
@@ -31,10 +21,10 @@ enum RootViewFactory {
 
 struct RootView: View {
     
-    @AppStorage(OnboardingStatus.userDefaultsKey) var status: String?
+    @AppStorage(UserDefaultsConstants.Keys.onboardingStatus) var status: String?
     
     var body: some View {
-        let onboarding = OnboardingStatus(rawValue: status ?? "")
+        let onboarding = UserDefaultsConstants.OnboardingStatusValues(rawValue: status ?? "")
         switch onboarding {
         case .needsToLogin, .none:
             WelcomeScreen()

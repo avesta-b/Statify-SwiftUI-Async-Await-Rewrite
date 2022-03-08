@@ -77,12 +77,18 @@ extension LoginWebViewController: WKNavigationDelegate {
             Task {
                 do {
                     let response = try await loginManager.tradeCodeForToken(with: code)
-                    // Todo: Refactor all userdefaults keys into an enum
-                    UserDefaults.standard.set(OnboardingStatus.loggedIn.rawValue, forKey: OnboardingStatus.userDefaultsKey)
-                    UserDefaults.standard.set(response.accessToken, forKey: TokenConstants.accessTokenKey)
-                    UserDefaults.standard.set(response.refreshToken, forKey: TokenConstants.refreshTokenKey)
+                    
+                    UserDefaults.standard.set(UserDefaultsConstants.OnboardingStatusValues.loggedIn.rawValue,
+                                              forKey: UserDefaultsConstants.Keys.onboardingStatus)
+                    
+                    UserDefaults.standard.set(response.accessToken,
+                                              forKey: UserDefaultsConstants.Keys.accessTokenKey)
+                    
+                    UserDefaults.standard.set(response.refreshToken,
+                                              forKey: UserDefaultsConstants.Keys.refreshTokenKey)
+                    
                     UserDefaults.standard.set(response.expiresIn + Int(Date().timeIntervalSince1970),
-                                              forKey: TokenConstants.expiryDateKey)
+                                              forKey: UserDefaultsConstants.Keys.expiryDateKey)
                     self.dismiss(animated: true)
                     
                 } catch is NetworkError {
